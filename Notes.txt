@@ -6,4 +6,7 @@ bitbake fsl-image-gui
 
 // Get the results
 cd /home/build/imx8mm/tmp/deploy/images/imx8mm-var-dart
-cp ??? /home/build/local_repos/
+cp fsl-image-gui-imx8mm-var-dart.wic.gz /dockerVol/yocto/downloads/
+
+// Create a SD card. Replace "/home/roy/nginx/yocto/downloads" with the proper path for your system
+ zcat /home/roy/nginx/yocto/downloads/fsl-image-gui-imx8mm-var-dart.wic.gz | sudo dd of=/dev/sde bs=1M conv=fsync
