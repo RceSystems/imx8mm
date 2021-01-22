@@ -1,0 +1,9 @@
+// Setup the build environment
+. /home/build/sources/poky/oe-init-build-env /home/build/imx8mm
+
+// Run the build
+bitbake fsl-image-gui
+
+// Get the results
+cd /home/build/imx8mm/tmp/deploy/images/imx8mm-var-dart
+cp ??? /home/build/local_repos/
