@@ -4,6 +4,9 @@
 // Run the build
 bitbake fsl-image-gui
 
+// Force a Kernel Compile to get the source into work-shared
+bitbake -C compile virtual/kernel
+
 // Get the results
 cd /home/build/imx8mm/tmp/deploy/images/imx8mm-var-dart
 cp fsl-image-gui-imx8mm-var-dart.wic.gz /dockerVol/yocto/downloads/
