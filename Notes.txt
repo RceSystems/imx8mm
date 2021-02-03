@@ -1,11 +1,16 @@
 // Setup the build environment
 . /home/build/sources/poky/oe-init-build-env /home/build/imx8mm
 
-// Run the build
-bitbake fsl-image-gui
-
 // Force a Kernel Compile to get the source into work-shared
 bitbake -C compile virtual/kernel
+
+// Edit the kernel configuration with:
+bitbake -c menuconfig virtual/kernel
+bitbake -c savedefconfig virtual/kernel
+
+
+// Run the build
+bitbake fsl-image-gui
 
 // Get the results
 cd /home/build/imx8mm/tmp/deploy/images/imx8mm-var-dart
